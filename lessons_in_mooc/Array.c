@@ -155,7 +155,7 @@ int removeLast(Array* array) {
 }
 
 
-//从数组中删除一个元素e
+//从数组中删除一个元素e.
 void removeElement(Array* array, int e)
 {
 	int index = find_element_return_index(array, e);
