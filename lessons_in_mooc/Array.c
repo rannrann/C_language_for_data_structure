@@ -143,8 +143,8 @@ int remove_in_array(Array* array, int index) {
 		array->data[i - 1] = array->data[i];
 	array->size--;
 
-	if (array->size == array->capacity / 2)
-		resize(array,array->capacity / 2);
+	if (array->size == array->capacity / 4 && array->capacity / 2 != 0)
+		resize(array,array->capacity / 2);//注意：有可能array->capacity/2=0，不可能将长度变为0.(比如capacity为1，size为0。那么size= 1/4 =0, 进而resize(1/2=0))
 
 	return ret;
 }
