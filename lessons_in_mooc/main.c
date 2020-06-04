@@ -10,5 +10,8 @@ int main() {
 	add(array, 1, 100);
 	toString(array);
 	
+	remove_in_array(array, 0);
+	toString(array);
+
 	return 0;
 }

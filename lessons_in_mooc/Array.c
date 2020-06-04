@@ -142,6 +142,10 @@ int remove_in_array(Array* array, int index) {
 	for (int i = index + 1; i < array->size; i++)
 		array->data[i - 1] = array->data[i];
 	array->size--;
+
+	if (array->size == array->capacity / 2)
+		resize(array,array->capacity / 2);
+
 	return ret;
 }
 
@@ -155,7 +159,7 @@ int removeLast(Array* array) {
 }
 
 
-//从数组中删除一个元素e....
+//从数组中删除一个元素e
 void removeElement(Array* array, int e)
 {
 	int index = find_element_return_index(array, e);
