@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 
-int* findDisappearedNumbers(int* nums, int numsSize,int* returnSize) {
+int* findDisappearedNumbers(int* nums, int numsSize, int* returnSize) {
 	int *arr = (int*)malloc((numsSize + 1) * sizeof(int));
 	int i, j, count = 0;
 	for (i = 0; i <= numsSize; i++)

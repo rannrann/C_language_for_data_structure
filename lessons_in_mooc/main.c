@@ -1,6 +1,7 @@
 #include "Array.h"
 #include "448.h"
 #include <string.h>
+#include "665.h"
 
 int main() {
 	/*
@@ -16,6 +17,7 @@ int main() {
 	remove_in_array(array, 0);
 	toString(array);*/
 	
+	/*448
 	int i,*nums = (int*)malloc(8 * sizeof(int)),*returnSize;
 	nums[0] = 4;
 	nums[1] = 3;
@@ -37,7 +39,19 @@ int main() {
 
 
 	free(nums);
-	nums = NULL;
+	nums = NULL;*/
 
+	int *nums = (int*)malloc(7 * sizeof(int));
+	nums[0] = 1;
+	nums[1] = 5;
+	nums[2] = 4;
+	nums[3] = 6;
+	nums[4] = 7;
+	nums[5] = 8;
+	nums[6] = 9;
+
+	printf("%d", checkPossibility(nums, 7));
+	free(nums);
+	nums = NULL;
 	return 0;
 }
