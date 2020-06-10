@@ -41,16 +41,14 @@ int main() {
 	free(nums);
 	nums = NULL;*/
 
-	int *nums = (int*)malloc(7 * sizeof(int));
-	nums[0] = 1;
-	nums[1] = 5;
-	nums[2] = 4;
-	nums[3] = 6;
-	nums[4] = 7;
-	nums[5] = 8;
-	nums[6] = 9;
+	int *nums = (int*)malloc(4 * sizeof(int));
+	nums[0] = 3;
+	nums[1] = 4;
+	nums[2] = 2;
+	nums[3] = 3;
 
-	printf("%d", checkPossibility(nums, 7));
+
+	printf("%d", checkPossibility(nums, 4));
 	free(nums);
 	nums = NULL;
 	return 0;
