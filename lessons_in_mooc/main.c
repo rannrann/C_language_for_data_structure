@@ -2,6 +2,7 @@
 #include "448.h"
 #include <string.h>
 #include "665.h"
+#include "189.h"
 
 int main() {
 	/*
@@ -41,6 +42,7 @@ int main() {
 	free(nums);
 	nums = NULL;*/
 
+	/*665
 	int *nums = (int*)malloc(4 * sizeof(int));
 	nums[0] = 3;
 	nums[1] = 4;
@@ -49,6 +51,16 @@ int main() {
 
 
 	printf("%d", checkPossibility(nums, 4));
+	free(nums);
+	nums = NULL;
+	*/
+	
+	int numsSize=7,*nums = (int*)malloc(numsSize * sizeof(int)),i;
+	for (i = 0; i < numsSize; i++)
+		nums[i] = i+1;
+	rotate(nums, numsSize, 3);
+	for (i = 0; i < numsSize; i++)
+		printf("%d,",nums[i]);
 	free(nums);
 	nums = NULL;
 	return 0;

@@ -22,7 +22,7 @@ bool checkPossibility(int* nums, int numsSize) {
 			return true;
 	}
 	if (mark != 1) {
-		int arr[numsSize-1];
+		int arr[3];//int arr[numsSize-1]报错，但其实没错，调试时需填入明确数字
 		if (nums[mark - 2] > nums[mark])
 		{
 			for (i = 0, j = 0; i < numsSize; i++, j++) {
