@@ -55,10 +55,12 @@ int main() {
 	nums = NULL;
 	*/
 	
-	int numsSize=7,*nums = (int*)malloc(numsSize * sizeof(int)),i;
-	for (i = 0; i < numsSize; i++)
-		nums[i] = i+1;
-	rotate(nums, numsSize, 3);
+	int numsSize=4,*nums = (int*)malloc(numsSize * sizeof(int)),i;
+	nums[0] = -1;
+	nums[1] = -100;
+	nums[2] = 3;
+	nums[3] = 99;
+	rotate(nums, numsSize, 2);
 	for (i = 0; i < numsSize; i++)
 		printf("%d,",nums[i]);
 	free(nums);

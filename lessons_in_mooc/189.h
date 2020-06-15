@@ -2,16 +2,18 @@
 #define _OBJ_H_C
 
 
+
 void rotate(int* nums, int numsSize, int k) {
-	int i, change, mark;
-	for (i = 0; (i + k + 1) < numsSize; i++) {
+	int i, count, change, j;
+	for (i = 0, count = 1, j = 1; count < numsSize; count++, j++) {
 		change = nums[i];
-		nums[i] = nums[i + k + 1];
-		nums[i + k + 1] = change;
+		if (i + j * k - (i + j * k) / numsSize * numsSize == i) {
+			i++;
+			j = 0;
+			continue;
+		}
+		nums[i] = nums[i + j * k - (i + j * k) / numsSize * numsSize];
+		nums[i + j * k - (i + j * k) / numsSize * numsSize] = change;
 	}
-	mark = nums[k];
-	for (i = k; i < numsSize - 1; i++)
-		nums[i] = nums[i + 1];
-	nums[numsSize] = mark;
 }
 #endif
