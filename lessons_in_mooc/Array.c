@@ -5,7 +5,7 @@
 
 struct Array {
 	int size;
-	int *data;
+	E *data;
 	int capacity;
 };
 
@@ -31,7 +31,7 @@ Array* create_array(int capacity) {
 	array = malloc(sizeof(Array));
 	if (array) {
 		array->size = 0;
-		array->data = (int*)malloc(capacity * sizeof(int));
+		array->data = (E*)malloc(capacity * sizeof(E));
 		array->capacity = capacity;
 	}
 	return array;
@@ -60,15 +60,15 @@ bool isEmpty(Array* array){
 	return array->size == 0 ? true : false;
 }
 
-void addLast(Array* array,int e) {
+void addLast(Array* array,E e) {
 	add(array,array->size,e);
 }
 
-void addFirst(Array* array, int e) {
+void addFirst(Array* array, E e) {
 	add(array, 0, e);
 }
 
-void add(Array* array, int index, int e) {
+void add(Array* array, int index, E e) {
 
 	if (index<0 || index>array->size) {
 		atexit(index_exception);
@@ -105,8 +105,16 @@ int get(Array* array, int index) {
 	return array->data[index];
 }
 
+E getLast(Array* array) {
+	return get(array, array->size - 1);
+}
+
+E getFirst(Array* array) {
+	return get(array, 0);
+}
+
 //修改index索引位置的元素为e
-void set(Array* array, int index, int e) {
+void set(Array* array, int index, E e) {
 	if (index < 0 || index >= array->size) {
 		atexit(set_exception);
 		exit(EXIT_FAILURE);
@@ -115,7 +123,7 @@ void set(Array* array, int index, int e) {
 }
 
 //查找数组中是否有元素e
-bool contains(Array* array, int e) {
+bool contains(Array* array, E e) {
 	for (int i = 0; i < array->size; i++) {
 		if (array->data[i] == e)
 			return true;
@@ -124,7 +132,7 @@ bool contains(Array* array, int e) {
 }
 
 //查找数组中元素。找到，返回索引；找不到，返回-1
-int find_element_return_index(Array* array, int e) {
+int find_element_return_index(Array* array, E e) {
 	for (int i = 0; i < array->size; i++) {
 		if (array->data[i] == e)
 			return i;
@@ -160,7 +168,7 @@ int removeLast(Array* array) {
 
 
 //从数组中删除一个元素e
-void removeElement(Array* array, int e)
+void removeElement(Array* array, E e)
 {
 	int index = find_element_return_index(array, e);
 	if (index != -1)

@@ -5,7 +5,7 @@
 #include "189.h"
 
 int main() {
-	/*
+	
 	Array *array = NULL;
 	array = create_array(10);
 	int i;
@@ -16,8 +16,8 @@ int main() {
 	toString(array);
 	
 	remove_in_array(array, 0);
-	toString(array);*/
-	
+	toString(array);
+	release_array(array);
 	/*448
 	int i,*nums = (int*)malloc(8 * sizeof(int)),*returnSize;
 	nums[0] = 4;
@@ -54,7 +54,7 @@ int main() {
 	free(nums);
 	nums = NULL;
 	*/
-	
+	/*189
 	int numsSize=4,*nums = (int*)malloc(numsSize * sizeof(int)),i;
 	nums[0] = -1;
 	nums[1] = -100;
@@ -64,6 +64,6 @@ int main() {
 	for (i = 0; i < numsSize; i++)
 		printf("%d,",nums[i]);
 	free(nums);
-	nums = NULL;
+	nums = NULL;*/
 	return 0;
 }
