@@ -6,10 +6,12 @@
 typedef struct ArrayStack ArrayStack;
 
 ArrayStack* creat_array_stack(int capacity);
-int getSize(ArrayStack* as);
-bool isEmpty(ArrayStack* as);
-int getCapacity(ArrayStack* as);
+int arrayStack_getSize(ArrayStack* as);
+bool arrayStack_isEmpty(ArrayStack* as);
+int arrayStack_getCapacity(ArrayStack* as);
 void push(ArrayStack* as,T e);
 T pop(ArrayStack* as);
 T peek(ArrayStack* as);
+void arrayStack_toString(ArrayStack* as);
+void release_array_stack(ArrayStack* as);
 #endif

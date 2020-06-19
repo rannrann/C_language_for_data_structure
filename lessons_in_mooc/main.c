@@ -3,9 +3,22 @@
 #include <string.h>
 #include "665.h"
 #include "189.h"
+#include "ArrayStack.h"
 
 int main() {
-	
+
+	ArrayStack *stack = NULL;
+	stack = creat_array_stack(5);
+	int i;
+	for (i = 0;i<5;i++) {
+		push(stack, i);
+		arrayStack_toString(stack);
+	}
+	pop(stack);
+	arrayStack_toString(stack);
+	release_array_stack(stack);
+
+	/*Array
 	Array *array = NULL;
 	array = create_array(10);
 	int i;
@@ -17,7 +30,7 @@ int main() {
 	
 	remove_in_array(array, 0);
 	toString(array);
-	release_array(array);
+	release_array(array);*/
 	/*448
 	int i,*nums = (int*)malloc(8 * sizeof(int)),*returnSize;
 	nums[0] = 4;
@@ -65,5 +78,7 @@ int main() {
 		printf("%d,",nums[i]);
 	free(nums);
 	nums = NULL;*/
+
+
 	return 0;
 }

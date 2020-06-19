@@ -3,11 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct Array {
-	int size;
-	E *data;
-	int capacity;
-};
 
 void index_exception() {
 	printf("Add failed. Require index >=0 and index <= size.\n");
@@ -48,15 +43,15 @@ void release_array(Array* array) {
 }
 
 //获取数组中的元素个数
-int getSize(Array* array) {
+int array_getSize(Array* array) {
 	return array->size;
 }
 
 //获取数组的容量
-int getCapacity(Array* array) {
+int array_getCapacity(Array* array) {
 	return array->capacity;
 }
-bool isEmpty(Array* array){
+bool array_isEmpty(Array* array){
 	return array->size == 0 ? true : false;
 }
 
@@ -84,12 +79,12 @@ void add(Array* array, int index, E e) {
 
 
 
-void toString(Array* array) {
+void array_toString(Array* array) {
 	printf("Array: size = %d, capacity = %d\n",array->size,array->capacity);
 	printf("[");
 	int i;
 	for (i = 0; i < array->size; i++) {
-		printf("%d",*(array->data + i));
+		printf("%d", array->data[i]);
 		if (i != array->size - 1)
 			printf(",");
 	}

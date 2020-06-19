@@ -5,19 +5,20 @@ struct ArrayStack {
 	Array *array;
 };
 ArrayStack* creat_array_stack(int capacity) {
-	ArrayStack *as;
+	ArrayStack *as=NULL;
 	as->array = create_array(capacity);
+	return as;
 }
-int getSize(ArrayStack* as) {
-	return getSize(as->array);
+int arrayStack_getSize(ArrayStack* as) {
+	return array_getSize(as->array);
 }
-bool isEmpty(ArrayStack* as)
+bool arrayStack_isEmpty(ArrayStack* as)
 {
-	return isEmpty(as->array);
+	return array_isEmpty(as->array);
 }
-int getCapacity(ArrayStack* as)
+int arrayStack_getCapacity(ArrayStack* as)
 {
-	return getCapacity(as->array);
+	return array_getCapacity(as->array);
 }
 void push(ArrayStack* as, T t)
 {
@@ -28,4 +29,20 @@ T pop(ArrayStack* as) {
 }
 T peek(ArrayStack* as) {
 	return getLast(as->array);
+}
+void arrayStack_toString(ArrayStack* as) {
+	printf("Stack:[");
+	int i;
+	for (i = 0; i < array_getSize(as->array); i++) {
+		printf("%d", as->array->data[i]);
+		if (i != array_getSize(as->array))
+			printf(",");
+	}
+	printf("] top\n");
+}
+
+void release_array_stack(ArrayStack* as) {
+	release_array(as->array);
+	free(as);
+	as = NULL;
 }

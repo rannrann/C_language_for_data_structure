@@ -4,19 +4,23 @@
 #define E Array_E
 typedef struct E *E;
 
-typedef struct Array Array;
+typedef struct Array {
+	int size;
+	E *data;
+	int capacity;
+}Array;
 
 Array* create_array(int capacity);
 
 void release_array(Array* array);
 
 //获取数组中的元素个数
-int getSize(Array* array);
+int array_getSize(Array* array);
 
 //获取数组的容量
-int getCapacity(Array* array);
+int array_getCapacity(Array* array);
 
-bool isEmpty(Array* array);
+bool array_isEmpty(Array* array);
 
 //在数组末尾添加元素
 void addLast(Array* array, E e);
@@ -26,7 +30,7 @@ void add(Array* array, E index, E e);
 
 void addFirst(Array* array, E e);
 
-void toString(Array* array);
+void array_toString(Array* array);
 
 //获取index索引位置的元素
 int get(Array* array,int index);
