@@ -1,8 +1,9 @@
-#ifndef _STACK1_
-#define _STACK1_
+#ifndef _STACK_A_
+#define _STACK_A_
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 typedef struct {
 	int* array;
 	int position;
@@ -13,9 +14,10 @@ typedef struct {
 MinStack* minStackCreate() {
 	MinStack *obj = NULL;
 	obj = malloc(sizeof(MinStack));
-	obj->array = (int*)malloc(8 * sizeof(int));
-	memset(obj->array, NULL, 8);
-	obj->position = 7;
+	if (obj) {
+		obj->position = 7;
+		obj->array = (int*)malloc(8 * sizeof(int));
+	}
 	return obj;
 }
 
