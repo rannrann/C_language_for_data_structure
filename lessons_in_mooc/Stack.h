@@ -5,8 +5,8 @@
 
 typedef struct T *T;
 
-extern T getSize(T *t);
-extern bool isEmpty(T *t);
+extern int arrayStack_getSize(T *t);
+extern bool arrayStack_isEmpty(T *t);
 extern void push(T *t, T e);
 extern T pop(T *t);
 extern T peek(T *t);

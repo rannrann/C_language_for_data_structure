@@ -120,10 +120,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Array.c" />
-    <ClCompile Include="ArrayStack.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="155.h" />
     <ClInclude Include="189.h" />
     <ClInclude Include="448.h" />
     <ClInclude Include="665.h" />

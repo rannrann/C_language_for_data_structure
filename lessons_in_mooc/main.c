@@ -6,7 +6,7 @@
 #include "ArrayStack.h"
 
 int main() {
-
+	/*ArrayStack
 	ArrayStack *stack = NULL;
 	stack = creat_array_stack(5);
 	int i;
@@ -16,7 +16,7 @@ int main() {
 	}
 	pop(stack);
 	arrayStack_toString(stack);
-	release_array_stack(stack);
+	release_array_stack(stack);*/
 
 	/*Array
 	Array *array = NULL;
@@ -78,7 +78,9 @@ int main() {
 		printf("%d,",nums[i]);
 	free(nums);
 	nums = NULL;*/
+	
 
+	
 
 	return 0;
 }

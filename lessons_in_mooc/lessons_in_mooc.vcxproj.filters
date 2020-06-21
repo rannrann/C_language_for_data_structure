@@ -33,15 +33,15 @@
     <ClInclude Include="ArrayStack.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="155.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Array.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ArrayStack.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
