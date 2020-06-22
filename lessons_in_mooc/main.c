@@ -4,6 +4,7 @@
 #include "665.h"
 #include "189.h"
 #include "ArrayStack.h"
+#include "155.h"
 
 int main() {
 	/*ArrayStack
@@ -18,7 +19,7 @@ int main() {
 	arrayStack_toString(stack);
 	release_array_stack(stack);*/
 
-	/*Array
+	/*Array*/
 	Array *array = NULL;
 	array = create_array(10);
 	int i;
@@ -26,11 +27,12 @@ int main() {
 		addLast(array, i);
 	}
 	add(array, 1, 100);
-	toString(array);
+	array_toString(array);
 	
 	remove_in_array(array, 0);
-	toString(array);
-	release_array(array);*/
+	array_toString(array);
+	release_array(array);
+
 	/*448
 	int i,*nums = (int*)malloc(8 * sizeof(int)),*returnSize;
 	nums[0] = 4;
@@ -78,8 +80,15 @@ int main() {
 		printf("%d,",nums[i]);
 	free(nums);
 	nums = NULL;*/
-	
-
+	/*155
+	MinStack *minStack = minStackCreate();
+	minStackPush(minStack,-2);
+	minStackPush(minStack,0);
+	minStackPush(minStack,-3);
+	printf("%d\n",minStackGetMin(minStack)); // return -3
+	minStackPop(minStack);
+	printf("%d\n",minStackTop(minStack));    // return 0
+	minStackFree(minStack);*/
 	
 
 	return 0;

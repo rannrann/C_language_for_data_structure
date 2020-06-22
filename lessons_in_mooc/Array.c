@@ -177,6 +177,6 @@ void resize(Array* array, int newCapacity) {
 	free(array->data);
 	array->data = NULL;
 	array->data = newData;
-	newData = NULL;
+	newData = NULL;//我认为可以不free(newData)的原因是，空间已经被array->data指向了，所以只需要让他指向NULL即可
 	array->capacity = newCapacity;
 }

@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 typedef struct {
 	int* array;
 	int position;
@@ -31,18 +30,18 @@ void minStackPush(MinStack* obj, int x) {
 }
 
 void minStackPop(MinStack* obj) {
-	obj->array[obj->position] = obj->array[obj->position - 1];
-	obj->array[obj->position - 1] = NULL;
-	obj->position--;
+	obj->array[obj->position-1] = obj->array[obj->position + 1];
+	obj->array[obj->position + 1] = NULL;
+	obj->position++;
 }
 
 int minStackTop(MinStack* obj) {
-	return obj->array[obj->position - 1];
+	return obj->array[obj->position + 1];
 }
 
 int minStackGetMin(MinStack* obj) {
 	int i, min;
-	for (i = obj->position - 1, min = obj->array[obj->position - 1]; i < 8; i++) {
+	for (i = obj->position + 1, min = obj->array[obj->position + 1]; i < 8; i++) {
 		if (obj->array[i] < min)
 			min = obj->array[i];
 	}
