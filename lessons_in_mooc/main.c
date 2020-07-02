@@ -19,7 +19,7 @@ int main() {
 	arrayStack_toString(stack);
 	release_array_stack(stack);*/
 
-	/*Array*/
+	/*Array
 	Array *array = NULL;
 	array = create_array(10);
 	int i;
@@ -31,7 +31,7 @@ int main() {
 	
 	remove_in_array(array, 0);
 	array_toString(array);
-	release_array(array);
+	release_array(array);*/
 
 	/*448
 	int i,*nums = (int*)malloc(8 * sizeof(int)),*returnSize;
@@ -80,16 +80,18 @@ int main() {
 		printf("%d,",nums[i]);
 	free(nums);
 	nums = NULL;*/
-	/*155
+
+	/*155*/
 	MinStack *minStack = minStackCreate();
 	minStackPush(minStack,-2);
 	minStackPush(minStack,0);
 	minStackPush(minStack,-3);
+	StringStack(minStack);//toString
 	printf("%d\n",minStackGetMin(minStack)); // return -3
 	minStackPop(minStack);
 	printf("%d\n",minStackTop(minStack));    // return 0
-	minStackFree(minStack);*/
-	
+	StringStack(minStack);//toString
+	minStackFree(minStack);
 
 	return 0;
 }
