@@ -29,6 +29,7 @@ void push(ArrayStack* as, T t)
 {
 	addLast(as->array, t);
 }
+
 T pop(ArrayStack* as) {
 	return removeLast(as->array);
 }

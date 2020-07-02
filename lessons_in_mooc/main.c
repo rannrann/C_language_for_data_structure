@@ -5,6 +5,7 @@
 #include "189.h"
 #include "ArrayStack.h"
 #include "155.h"
+#include "ArrayQueue.h"
 
 int main() {
 	/*ArrayStack
@@ -81,7 +82,7 @@ int main() {
 	free(nums);
 	nums = NULL;*/
 
-	/*155*/
+	/*155
 	MinStack *minStack = minStackCreate();
 	minStackPush(minStack,-2);
 	minStackPush(minStack,0);
@@ -91,7 +92,19 @@ int main() {
 	minStackPop(minStack);
 	printf("%d\n",minStackTop(minStack));    // return 0
 	StringStack(minStack);//toString
-	minStackFree(minStack);
+	minStackFree(minStack);*/
+
+	/*Queue*/
+	ArrayQueue *queue = create_array_queue(10);
+	int i;
+	for (i = 0; i < 10; i++) {
+		enqueue(queue, i);
+		arrayQueue_toString(queue);
+		if (i % 3 == 2) {
+			dequeue(queue);
+			arrayQueue_toString(queue);
+		}
+	}
 
 	return 0;
 }
