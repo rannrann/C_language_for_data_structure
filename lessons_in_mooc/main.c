@@ -5,7 +5,8 @@
 #include "189.h"
 #include "ArrayStack.h"
 #include "155.h"
-#include "ArrayQueue.h"
+
+#include "LoopQueue.h"
 
 int main() {
 	/*ArrayStack
@@ -94,7 +95,8 @@ int main() {
 	StringStack(minStack);//toString
 	minStackFree(minStack);*/
 
-	/*Queue*/
+	/*ArrayQueue
+	#include "ArrayQueue.h"
 	ArrayQueue *queue = create_array_queue(10);
 	int i;
 	for (i = 0; i < 10; i++) {
@@ -105,6 +107,19 @@ int main() {
 			arrayQueue_toString(queue);
 		}
 	}
-
+	release_array_queue(queue);*/
+	/*LoopQueue
+	LoopQueue *queue = create_loop_queue(10);
+	int i;
+	for (i = 0; i < 10; i++) {
+		enqueue(queue, i);//使用的时候要隐藏#include "ArrayQueue.h"，因为ArrayQueue和LoopQueue都继承可Queue。C语言对于不同对象的相同方法名不能区分
+		loopQueue_toString(queue);
+		if (i % 3 == 2) {
+			dequeue(queue);
+			loopQueue_toString(queue);
+		}
+	}
+	release_loop_queue(queue);*/
+printf("%d", 0%3);
 	return 0;
 }

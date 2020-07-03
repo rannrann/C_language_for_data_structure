@@ -3,6 +3,7 @@
 #include "Array.h"
 #include "Queue.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct ArrayQueue {
 	Array *array;
@@ -10,7 +11,7 @@ typedef struct ArrayQueue {
 
 ArrayQueue* create_array_queue(int capacity) {
 	ArrayQueue *aq = NULL;
-	aq = malloc(sizeof(ArrayQueue));
+	aq = malloc(sizeof(ArrayQueue));//第一次写，这块报错，执行后无错
 	aq->array = create_array(capacity);
 	return aq;
 }
@@ -29,7 +30,7 @@ int getCapacity(ArrayQueue *aq) {
 }
 
 void enqueue(ArrayQueue *aq, Q q) {
-	addLast(aq->array, q);
+	addLast(aq->array, q);//第一次写，这块报错，执行后无错
 }
 Q dequeue(ArrayQueue *aq) {
 	removeFirst(aq->array);
@@ -47,5 +48,11 @@ void arrayQueue_toString(ArrayQueue* aq) {
 			printf(",");
 	}
 	printf("]tail \n");
+}
+
+void release_array_queue(ArrayQueue* aq) {
+	release_array(aq->array);
+	free(aq);
+	aq = NULL;
 }
 #endif
