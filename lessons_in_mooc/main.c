@@ -7,6 +7,7 @@
 #include "155.h"
 
 #include "LoopQueue.h"
+#include"457.h"
 
 int main() {
 	/*ArrayStack
@@ -120,6 +121,15 @@ int main() {
 		}
 	}
 	release_loop_queue(queue);*/
-printf("%d", 0%3);
+
+	/*457*/
+int numsSize = 3, *arr = (int*)malloc(numsSize * sizeof(int));
+arr[0] = -2;
+arr[1] = -3;
+arr[2] = -9;
+
+printf("%d",circularArrayLoop(arr, numsSize));
+free(arr);
+arr = NULL;
 	return 0;
 }
