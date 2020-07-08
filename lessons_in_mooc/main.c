@@ -123,13 +123,20 @@ int main() {
 	release_loop_queue(queue);*/
 
 	/*457*/
-int numsSize = 3, *arr = (int*)malloc(numsSize * sizeof(int));
-arr[0] = -2;
-arr[1] = -3;
-arr[2] = -9;
+	int numsSize = 7, *arr = (int*)malloc(numsSize * sizeof(int));
+	arr[0] = 2;
+	arr[1] = 2;
+	arr[2] = 2;
+	arr[3] = 2;
+	arr[4] = 2;
+	arr[5] = 4;
+	arr[6] = 7;
 
-printf("%d",circularArrayLoop(arr, numsSize));
-free(arr);
-arr = NULL;
+
+	printf("%d",circularArrayLoop(arr, numsSize));
+	free(arr);
+	arr = NULL;
+
 	return 0;
+
 }
