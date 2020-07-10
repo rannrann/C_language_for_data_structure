@@ -1,6 +1,6 @@
 #ifndef _QUEUE_
 #define _QUEUE_
-
+#include <stdbool.h>
 #define Q Queue_Q
 
 typedef struct Q *Q;

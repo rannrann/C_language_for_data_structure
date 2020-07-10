@@ -6,7 +6,7 @@
 #include "ArrayStack.h"
 #include "155.h"
 
-#include "LoopQueue.h"
+
 #include"457.h"
 
 int main() {
@@ -109,11 +109,13 @@ int main() {
 		}
 	}
 	release_array_queue(queue);*/
+
 	/*LoopQueue
+	#include "LoopQueue.h"
 	LoopQueue *queue = create_loop_queue(10);
 	int i;
 	for (i = 0; i < 10; i++) {
-		enqueue(queue, i);//使用的时候要隐藏#include "ArrayQueue.h"，因为ArrayQueue和LoopQueue都继承可Queue。C语言对于不同对象的相同方法名不能区分
+		enqueue(queue, i);//使用的时候只能删除ArrayQueue.h和ArrayQueue.c,因为在这两个文件已经定义了Queue.h中声明的方法
 		loopQueue_toString(queue);
 		if (i % 3 == 2) {
 			dequeue(queue);
@@ -122,7 +124,7 @@ int main() {
 	}
 	release_loop_queue(queue);*/
 
-	/*457*/
+	/*457
 	int numsSize = 7, *arr = (int*)malloc(numsSize * sizeof(int));
 	arr[0] = 2;
 	arr[1] = 2;
@@ -135,7 +137,7 @@ int main() {
 
 	printf("%d",circularArrayLoop(arr, numsSize));
 	free(arr);
-	arr = NULL;
+	arr = NULL;*/
 
 	return 0;
 

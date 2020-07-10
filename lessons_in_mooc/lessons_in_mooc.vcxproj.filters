@@ -48,13 +48,25 @@
     <ClInclude Include="457.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ArrayStack.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
     <ClCompile Include="Array.c">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayQueue.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoopQueue.c">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
