@@ -12,26 +12,26 @@ ArrayQueue* create_array_queue(int capacity) {
 	return aq;
 }
 
-int queue_getSize(ArrayQueue *aq)
+int ArrayQueue_getSize(ArrayQueue *aq)
 {
 	return array_getSize(aq->array);
 }
 
-bool queue_isEmpty(ArrayQueue *aq) {
+bool ArrayQueue_isEmpty(ArrayQueue *aq) {
 	return array_isEmpty(aq->array);
 }
 
-int getCapacity(ArrayQueue *aq) {
+int ArrayQueue_getCapacity(ArrayQueue *aq) {
 	return array_getCapacity(aq->array);
 }
 
-void enqueue(ArrayQueue *aq, Q q) {
+void ArrayQueue_enqueue(ArrayQueue *aq, Q q) {
 	addLast(aq->array, q);//第一次写，这块报错，执行后无错
 }
-Q dequeue(ArrayQueue *aq) {
+Q ArrayQueue_dequeue(ArrayQueue *aq) {
 	removeFirst(aq->array);
 }
-Q queue_getFront(ArrayQueue *aq) {
+Q ArrayQueue_getFront(ArrayQueue *aq) {
 	getFirst(aq->array);
 }
 

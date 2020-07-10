@@ -51,6 +51,9 @@
     <ClInclude Include="LinkedList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedListStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -66,6 +69,9 @@
       <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="LoopQueue.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.c">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>

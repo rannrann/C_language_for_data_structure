@@ -5,9 +5,11 @@
 #include "189.h"
 #include "ArrayStack.h"
 #include "155.h"
-
-
+#include "LoopQueue.h"
+#include "ArrayQueue.h"
 #include"457.h"
+#include "LinkedList.h"
+#include "LinkedListStack.h"
 
 int main() {
 	/*ArrayStack
@@ -101,24 +103,24 @@ int main() {
 	ArrayQueue *queue = create_array_queue(10);
 	int i;
 	for (i = 0; i < 10; i++) {
-		enqueue(queue, i);
+		ArrayQueue_enqueue(queue, i);
 		arrayQueue_toString(queue);
 		if (i % 3 == 2) {
-			dequeue(queue);
+			ArrayQueue_dequeue(queue);
 			arrayQueue_toString(queue);
 		}
 	}
 	release_array_queue(queue);*/
 
 	/*LoopQueue
-	#include "LoopQueue.h"
+	
 	LoopQueue *queue = create_loop_queue(10);
 	int i;
 	for (i = 0; i < 10; i++) {
-		enqueue(queue, i);//使用的时候只能删除ArrayQueue.h和ArrayQueue.c,因为在这两个文件已经定义了Queue.h中声明的方法
+		LoopQueue_enqueue(queue, i);//使用的时候只能删除ArrayQueue.h和ArrayQueue.c,因为在这两个文件已经定义了Queue.h中声明的方法
 		loopQueue_toString(queue);
 		if (i % 3 == 2) {
-			dequeue(queue);
+			LoopQueue_dequeue(queue);
 			loopQueue_toString(queue);
 		}
 	}
@@ -138,7 +140,36 @@ int main() {
 	printf("%d",circularArrayLoop(arr, numsSize));
 	free(arr);
 	arr = NULL;*/
+	
+	/*LinkedList
+	LinkedList *ll = create_linked_list();
+	for (int i = 0; i < 5; i++) {
+		linkedList_addFirst(ll,i);
+		linkedList_toString(ll);
+	}
+	linkedList_add(ll, 2, 666);
+	linkedList_toString(ll);
+	
+	linkedList_remove(ll, 2);
+	linkedList_toString(ll);
+	
+	linkedList_removeFirst(ll);
+	linkedList_toString(ll);
 
+	linkedList_removeLast(ll);
+	linkedList_toString(ll);
+
+	release_linked_list(ll);*/
+
+	/*LinkedListStack*/
+	LinkedListStack *lls = create_linked_list_stack();
+	for (int i = 0; i < 5; i++) {
+		linkedListStack_push(lls,i);
+		linkedListStack_toString(lls);
+	}
+	linkedListStack_pop(lls);
+	linkedListStack_toString(lls);
+	release_linked_list_stack(lls);
 	return 0;
 
 }

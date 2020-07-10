@@ -5,7 +5,7 @@
 
 
 struct LoopQueue {
-	Q *data;
+	C *data;
 	int front;
 	int tail;
 	int size;
@@ -22,7 +22,7 @@ void getFront_empty() {
 LoopQueue* create_loop_queue(int capacity) {
 	LoopQueue *lq = NULL;
 	lq = malloc(sizeof(LoopQueue));
-	lq->data = (Q*)malloc((capacity + 1) * sizeof(Q));
+	lq->data = (C*)malloc((capacity + 1) * sizeof(C));
 	lq->front = 0;
 	lq->tail = 0;
 	lq->size = 0;
@@ -30,18 +30,18 @@ LoopQueue* create_loop_queue(int capacity) {
 	return lq;
 }
 
-int loopQueue_getCapacity(LoopQueue *lq) {
+int LoopQueue_getCapacity(LoopQueue *lq) {
 	return lq->capacity;
 }
-int queue_getSize(LoopQueue *lq) {
+int LoopQueue_getSize(LoopQueue *lq) {
 	return lq->size;
 }
-bool queue_isEmpty(LoopQueue *lq) {
+bool LoopQueue_isEmpty(LoopQueue *lq) {
 	return lq->front == lq->tail;
 }
 
-void loopQueue_resize(LoopQueue *lq, int newCapacity) {
-	Q *newData = (Q*)malloc((newCapacity + 1) * sizeof(Q));
+void LoopQueue_resize(LoopQueue *lq, int newCapacity) {
+	C *newData = (C*)malloc((newCapacity + 1) * sizeof(C));
 	int i;
 	for (int i = 0; i < lq->size; i++)
 		newData[i] = lq->data[(i + lq->front) % (lq->capacity + 1)];
@@ -54,31 +54,31 @@ void loopQueue_resize(LoopQueue *lq, int newCapacity) {
 	lq->tail = lq->size;
 }
 
-void enqueue(LoopQueue *lq, Q e)
+void LoopQueue_enqueue(LoopQueue *lq, C e)
 {
 	int length = lq->capacity + 1;
 	if ((lq->tail + 1) % length == lq->front)
-		loopQueue_resize(lq, loopQueue_getCapacity(lq) * 2);
+		LoopQueue_resize(lq, lq->capacity * 2);
 	lq->data[lq->tail] = e;
 	lq->tail = (lq->tail + 1) % (lq->capacity + 1);
 	lq->size++;
 }
 //Q一定是要和继承的Queue.h中的Q是一样的，不一样的话会被系统认为是重复定义
-Q dequeue(LoopQueue *lq) {
-	if (queue_isEmpty(lq)) {
+C LoopQueue_dequeue(LoopQueue *lq) {
+	if (LoopQueue_isEmpty(lq)) {
 		atexit(dequeue_empty);
 		exit(EXIT_FAILURE);
 	}
-	Q ret = lq->data[lq->front];
+	C ret = lq->data[lq->front];
 	lq->data[lq->front] = NULL;
 	lq->front = (lq->front + 1) % (lq->capacity + 1);
 	lq->size--;
-	if (lq->size == loopQueue_getCapacity(lq) / 4 && loopQueue_getCapacity(lq) / 2 != 0)
-		loopQueue_resize(lq, loopQueue_getCapacity(lq) / 2);
+	if (lq->size == lq->capacity / 4 && lq->capacity / 2 != 0)
+		LoopQueue_resize(lq, lq->capacity / 2);
 	return ret;
 }
-Q queue_getFront(LoopQueue *lq) {
-	if (queue_isEmpty(lq)) {
+C queue_getFront(LoopQueue *lq) {
+	if (LoopQueue_isEmpty(lq)) {
 		atexit(getFront_empty);
 		exit(EXIT_FAILURE);
 	}
