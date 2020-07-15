@@ -123,6 +123,7 @@
     <ClCompile Include="ArrayQueue.c" />
     <ClCompile Include="ArrayStack.c" />
     <ClCompile Include="LinkedList.c" />
+    <ClCompile Include="LinkedListStack.c" />
     <ClCompile Include="LoopQueue.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
@@ -136,6 +137,7 @@
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="LinkedListQueue.h" />
     <ClInclude Include="LinkedListStack.h" />
     <ClInclude Include="LoopQueue.h" />
     <ClInclude Include="Queue.h" />

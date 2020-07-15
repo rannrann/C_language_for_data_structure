@@ -2,10 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-struct Node {
-	B e;
-	Node *next;
-};
+
 
 struct LinkedList {
 	Node *dummyHead;
@@ -135,14 +132,18 @@ B linkedList_remove(LinkedList *ll, int index) {
 		atexit(illegal_index);
 		exit(EXIT_FAILURE);
 	}
+	B returnE;
 	Node *prev = ll->dummyHead;
 	for (int i = 0; i < index; i++)
 		prev = prev->next;
 	Node *retNode = prev->next;
 	prev->next = retNode->next;
 	retNode->next = NULL;
+	returnE = retNode->e;
+	free(retNode);
+	retNode = NULL;
 	ll->size--;
-	return retNode->e;
+	return returnE;
 }
 
 //从链表中删除第一个元素，返回删除的元素

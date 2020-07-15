@@ -10,6 +10,7 @@
 #include"457.h"
 #include "LinkedList.h"
 #include "LinkedListStack.h"
+#include "LinkedListQueue.h"
 
 int main() {
 	/*ArrayStack
@@ -161,7 +162,7 @@ int main() {
 
 	release_linked_list(ll);*/
 
-	/*LinkedListStack*/
+	/*LinkedListStack
 	LinkedListStack *lls = create_linked_list_stack();
 	for (int i = 0; i < 5; i++) {
 		linkedListStack_push(lls,i);
@@ -169,7 +170,20 @@ int main() {
 	}
 	linkedListStack_pop(lls);
 	linkedListStack_toString(lls);
-	release_linked_list_stack(lls);
+	release_linked_list_stack(lls);*/
+
+
+	/*LinkedListQueue*/
+	LinkedListQueue *queue = create_linked_list_queue();
+	for (int i = 0; i < 10; i++) {
+		linkedListQueue_enqueue(queue, i);
+		linkedListQueue_toString(queue);
+		if (i % 3 == 2) {
+			linkedListQueue_dequeue(queue);
+			linkedListQueue_toString(queue);
+		}
+	}
+	release_linked_list_queue(queue);
 	return 0;
 
 }
