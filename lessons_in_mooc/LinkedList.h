@@ -66,5 +66,7 @@ B linkedList_removeFirst(LinkedList *ll);
 //从链表中删除最后的元素，返回删除的元素
 B linkedList_removeLast(LinkedList *ll);
 
+void linkedList_removeElement(LinkedList *ll, B e);
+
 void release_linked_list(LinkedList *ll);
 #endif

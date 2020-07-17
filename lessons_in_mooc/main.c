@@ -11,6 +11,7 @@
 #include "LinkedList.h"
 #include "LinkedListStack.h"
 #include "LinkedListQueue.h"
+#include "203.h"
 
 int main() {
 	/*ArrayStack
@@ -151,13 +152,7 @@ int main() {
 	linkedList_add(ll, 2, 666);
 	linkedList_toString(ll);
 	
-	linkedList_remove(ll, 2);
-	linkedList_toString(ll);
-	
-	linkedList_removeFirst(ll);
-	linkedList_toString(ll);
-
-	linkedList_removeLast(ll);
+	linkedList_removeElement(ll, 666);
 	linkedList_toString(ll);
 
 	release_linked_list(ll);*/
@@ -173,7 +168,7 @@ int main() {
 	release_linked_list_stack(lls);*/
 
 
-	/*LinkedListQueue*/
+	/*LinkedListQueue
 	LinkedListQueue *queue = create_linked_list_queue();
 	for (int i = 0; i < 10; i++) {
 		linkedListQueue_enqueue(queue, i);
@@ -183,7 +178,22 @@ int main() {
 			linkedListQueue_toString(queue);
 		}
 	}
-	release_linked_list_queue(queue);
+	release_linked_list_queue(queue);*/
+	
+
+	/*203*/
+struct ListNode* head=malloc(sizeof(struct ListNode));
+head->val = 1;
+head->next = NULL;
+addElements(head, 2);
+addElements(head, 6);
+addElements(head, 3);
+addElements(head, 4);
+addElements(head, 5);
+addElements(head, 6);
+
+removeElements(head, 6);
+release_listNode(head);
 	return 0;
 
 }

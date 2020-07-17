@@ -156,6 +156,18 @@ B linkedList_removeLast(LinkedList *ll) {
 	return linkedList_remove(ll, ll->size - 1);
 }
 
+void linkedList_removeElement(LinkedList *ll, B e) {
+	for (Node *prev = ll->dummyHead; prev->next != NULL; prev = prev->next) {
+		if (prev->next->e == e) {
+			Node *target = prev->next;
+			prev->next = target->next;
+			target->next = NULL;
+			free(target);
+			target = NULL;
+		}
+	}
+}
+
 void release_linked_list(LinkedList *ll) {
 	int i, j, length;
 	Node *prev;
