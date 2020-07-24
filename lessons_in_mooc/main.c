@@ -128,20 +128,24 @@ int main() {
 	}
 	release_loop_queue(queue);*/
 
-	/*457
-	int numsSize = 7, *arr = (int*)malloc(numsSize * sizeof(int));
-	arr[0] = 2;
-	arr[1] = 2;
-	arr[2] = 2;
-	arr[3] = 2;
-	arr[4] = 2;
-	arr[5] = 4;
-	arr[6] = 7;
+	/*457*/
+	int numsSize = 10, *arr = (int*)malloc(numsSize * sizeof(int));
+	arr[0] = 1;
+	arr[1] = 1;
+	arr[2] = 1;
+	arr[3] = 1;
+	arr[4] = 1;
+	arr[5] = 1;
+	arr[6] = 1;
+	arr[7] = 1;
+	arr[8] = 1;
+	arr[9] = -5;
+
 
 
 	printf("%d",circularArrayLoop(arr, numsSize));
 	free(arr);
-	arr = NULL;*/
+	arr = NULL;
 	
 	/*LinkedList
 	LinkedList *ll = create_linked_list();
@@ -181,7 +185,7 @@ int main() {
 	release_linked_list_queue(queue);*/
 	
 
-	/*203*/
+	/*203
 struct ListNode* head=malloc(sizeof(struct ListNode));
 head->val = 1;
 head->next = NULL;
@@ -193,7 +197,7 @@ addElements(head, 5);
 addElements(head, 6);
 
 removeElements(head, 6);
-release_listNode(head);
+release_listNode(head);*/
 	return 0;
 
 }
