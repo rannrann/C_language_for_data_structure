@@ -1,8 +1,9 @@
 #ifndef ARRAY_QUEUE
 #define ARRAY_QUEUE
 #include "Array.h"
-#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #define Q ArrayQueue_Q
 
@@ -12,14 +13,14 @@ typedef struct ArrayQueue ArrayQueue;
 
 ArrayQueue* create_array_queue(int capacity);
 
-int ArrayQueue_queue_getSize(ArrayQueue *aq);
-bool ArrayQueue_queue_isEmpty(ArrayQueue *aq);
+int arrayQueue_getSize(ArrayQueue *aq);
+bool arrayQueue_isEmpty(ArrayQueue *aq);
 
-int ArrayQueue_getCapacity(ArrayQueue *aq);
+int arrayQueue_getCapacity(ArrayQueue *aq);
 
-void ArrayQueue_enqueue(ArrayQueue *aq, Q q);
-Q ArrayQueue_dequeue(ArrayQueue *aq);
-Q ArrayQueue_getFront(ArrayQueue *aq);
+void arrayQueue_enqueue(ArrayQueue *aq, Q q);
+Q arrayQueue_dequeue(ArrayQueue *aq);
+Q arrayQueue_getFront(ArrayQueue *aq);
 
 void arrayQueue_toString(ArrayQueue* aq);
 

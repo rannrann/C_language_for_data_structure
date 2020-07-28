@@ -7,7 +7,7 @@ struct ArrayStack {
 	Array *array;
 };
 
-ArrayStack* creat_array_stack(int capacity) {
+ArrayStack* create_array_stack(int capacity) {
 	ArrayStack *as = NULL;
 	as = malloc(sizeof(ArrayStack));
 	as->array = create_array(capacity);

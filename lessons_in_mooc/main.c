@@ -12,7 +12,8 @@
 #include "LinkedListStack.h"
 #include "LinkedListQueue.h"
 #include "203.h"
-
+#include "BST.h"
+#include <time.h>
 int main() {
 	/*ArrayStack
 	ArrayStack *stack = NULL;
@@ -128,7 +129,7 @@ int main() {
 	}
 	release_loop_queue(queue);*/
 
-	/*457*/
+	/*457
 	int numsSize = 10, *arr = (int*)malloc(numsSize * sizeof(int));
 	arr[0] = 1;
 	arr[1] = 1;
@@ -145,7 +146,7 @@ int main() {
 
 	printf("%d",circularArrayLoop(arr, numsSize));
 	free(arr);
-	arr = NULL;
+	arr = NULL;*/
 	
 	/*LinkedList
 	LinkedList *ll = create_linked_list();
@@ -198,6 +199,19 @@ addElements(head, 6);
 
 removeElements(head, 6);
 release_listNode(head);*/
+
+
+/*BST*/
+
+BST *bst = create_BST();
+int array[6] = { 5,3,6,8,4,2 };
+for (int i = 0; i < 6; i++)
+	BST_add(bst, array[i]);
+BST_toString(bst);
+printf("----------------------------\n");
+BST_remove(bst, 5);
+BST_toString(bst);
+release_BST(bst);
 	return 0;
 
 }

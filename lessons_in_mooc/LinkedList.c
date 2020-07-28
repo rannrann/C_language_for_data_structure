@@ -53,9 +53,9 @@ void linkedList_add(LinkedList *ll, int index, B e) {
 		atexit(illegal_index);
 		exit(EXIT_FAILURE);
 	}
+
 	Node *prev = ll->dummyHead;
-	int i;
-	for (i = 0; i < index; i++)
+	for (int i = 0; i < index; i++)
 		prev = prev->next;
 	prev->next = create_node_with_no_empty_next(e, prev->next);
 	ll->size++;

@@ -6,7 +6,7 @@
 
 typedef struct ArrayStack ArrayStack;
 
-ArrayStack* creat_array_stack(int capacity);
+ArrayStack* create_array_stack(int capacity);
 int arrayStack_getSize(ArrayStack* as);
 bool arrayStack_isEmpty(ArrayStack* as);
 int arrayStack_getCapacity(ArrayStack* as);

@@ -1,6 +1,4 @@
 #include "ArrayQueue.h"
-#include <stdio.h>
-#include <stdlib.h>
 struct ArrayQueue {
 	Array *array;
 };
@@ -12,26 +10,26 @@ ArrayQueue* create_array_queue(int capacity) {
 	return aq;
 }
 
-int ArrayQueue_getSize(ArrayQueue *aq)
+int arrayQueue_getSize(ArrayQueue *aq)
 {
 	return array_getSize(aq->array);
 }
 
-bool ArrayQueue_isEmpty(ArrayQueue *aq) {
+bool arrayQueue_isEmpty(ArrayQueue *aq) {
 	return array_isEmpty(aq->array);
 }
 
-int ArrayQueue_getCapacity(ArrayQueue *aq) {
+int arrayQueue_getCapacity(ArrayQueue *aq) {
 	return array_getCapacity(aq->array);
 }
 
-void ArrayQueue_enqueue(ArrayQueue *aq, Q q) {
+void arrayQueue_enqueue(ArrayQueue *aq, Q q) {
 	addLast(aq->array, q);//第一次写，这块报错，执行后无错
 }
-Q ArrayQueue_dequeue(ArrayQueue *aq) {
+Q arrayQueue_dequeue(ArrayQueue *aq) {
 	removeFirst(aq->array);
 }
-Q ArrayQueue_getFront(ArrayQueue *aq) {
+Q arrayQueue_getFront(ArrayQueue *aq) {
 	getFirst(aq->array);
 }
 
