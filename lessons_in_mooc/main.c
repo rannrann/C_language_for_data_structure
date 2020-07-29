@@ -13,6 +13,7 @@
 #include "LinkedListQueue.h"
 #include "203.h"
 #include "BST.h"
+
 #include <time.h>
 int main() {
 	/*ArrayStack
@@ -213,7 +214,7 @@ printf("%d\n",BST_removeMax(bst));
 BST_toString(bst);
 printf("----------------------------\n");
 BST_add(bst, 8);
-printf("%d\n", BST_removeMaxNR(bst,bst->root));
+printf("%d\n", BST_removeMaxNR(bst));
 BST_toString(bst);
 release_BST(bst);
 	return 0;

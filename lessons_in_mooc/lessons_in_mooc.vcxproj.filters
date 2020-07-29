@@ -63,6 +63,9 @@
     <ClInclude Include="BST.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BSTSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -87,6 +90,9 @@
       <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="LinkedListQueue.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BST.c">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>

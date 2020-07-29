@@ -122,6 +122,7 @@
     <ClCompile Include="Array.c" />
     <ClCompile Include="ArrayQueue.c" />
     <ClCompile Include="ArrayStack.c" />
+    <ClCompile Include="BST.c" />
     <ClCompile Include="LinkedList.c" />
     <ClCompile Include="LinkedListQueue.c" />
     <ClCompile Include="LinkedListStack.c" />
@@ -139,6 +140,7 @@
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="BST.h" />
+    <ClInclude Include="BSTSet.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="LinkedListQueue.h" />
     <ClInclude Include="LinkedListStack.h" />
