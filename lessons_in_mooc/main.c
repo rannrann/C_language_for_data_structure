@@ -209,7 +209,11 @@ for (int i = 0; i < 6; i++)
 	BST_add(bst, array[i]);
 BST_toString(bst);
 printf("----------------------------\n");
-BST_remove(bst, 5);
+printf("%d\n",BST_removeMax(bst));
+BST_toString(bst);
+printf("----------------------------\n");
+BST_add(bst, 8);
+printf("%d\n", BST_removeMaxNR(bst,bst->root));
 BST_toString(bst);
 release_BST(bst);
 	return 0;

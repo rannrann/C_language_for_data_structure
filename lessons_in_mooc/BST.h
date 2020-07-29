@@ -232,7 +232,7 @@ int BST_mininum(BST *bst) {
 lrNode* lrNode_maximum(lrNode *node) {
 	if (node->right == NULL)
 		return node;
-	return lrNode_minimum(node->right);
+	return lrNode_maximum(node->right);
 }
 
 
@@ -243,7 +243,7 @@ int BST_maxinum(BST *bst) {
 		atexit(empty_BST);
 		exit(EXIT_FAILURE);
 	}
-	return lrNode_minimum(bst->root)->e;
+	return lrNode_maximum(bst->root)->e;
 }
 
 
@@ -289,15 +289,68 @@ lrNode* lrNode_removeMax(BST *bst,lrNode *node) {
 
 //从二分搜索树中删除最大值所在节点，返回最大值
 int BST_removeMax(BST *bst) {
-	int ret = BST_mininum(bst);
+	int ret = BST_maxinum(bst);
 	bst->root = lrNode_removeMax(bst,bst->root);
 	return ret;
 }
 
-//以非递归的方式删除最大值，返回最大值
-lrNode* BST_removeMaxNR(lrNode *node) {
-	while(node->right->)
+//以非递归的方式删除最小值，返回最小值
+int BST_removeMaxNR(BST *bst, lrNode *node) {
+	if (node->left == NULL) {
+		int ret = node->e;
+		lrNode *ancestor = node;
+		node = node->right;
+		free(ancestor);
+		ancestor = NULL;
+		return ret;
+	}
+	else
+	{
+		lrNode *parent = node;
+		while (node->left != NULL)
+			node = node->left;
+		while (parent->left != node)
+			parent = parent->left;
+
+		int ret = node->e;
+		parent->left = node->right;
+		node->right = NULL;
+		free(node);
+		node = NULL;
+		bst->size--;
+		return ret;
+	}
 }
+
+//以非递归的方式删除最大值，返回最大值
+int BST_removeMaxNR(BST *bst,lrNode *node) {
+	if (node->right == NULL) {
+		int ret = node->e;
+		lrNode *ancestor = node;
+		node = node->left;
+		free(ancestor);
+		ancestor = NULL;
+		return ret;
+	}
+	else 
+	{
+		lrNode *parent = node;
+		while (node->right != NULL)
+			node = node->right;
+		while (parent->right != node)
+			parent = parent->right;
+
+		int ret = node->e;
+		parent->right = node->left;
+		node->left = NULL;
+		free(node);
+		node = NULL;
+		bst->size--;
+		return ret;
+	}
+}
+
+
 
 //删除以node为根的二分搜索树中值为e的节点，递归算法
 //返回删除节点后新的二分搜索树的根
