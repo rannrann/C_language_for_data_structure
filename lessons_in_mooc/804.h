@@ -69,7 +69,6 @@ int uniqueMorseRepresentations(char ** words, int wordsSize) {
 			char *ret = find_index_return_mode(words[i][j]);
 			strcat(arr, ret);
 		}
-		printf("%s\n", arr);
 		if (!eightZeroFour_contains(D, wordsSize, arr)) {
 			eightZeroFour_add(D, arr);
 			counter++;
