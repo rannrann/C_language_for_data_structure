@@ -1,6 +1,8 @@
 #ifndef _LINKED_LIST_
 #define _LINKED_LIST_
-
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #define B LinkedList_B

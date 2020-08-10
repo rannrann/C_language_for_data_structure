@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -97,6 +98,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -136,6 +138,7 @@
     <ClInclude Include="448.h" />
     <ClInclude Include="457.h" />
     <ClInclude Include="665.h" />
+    <ClInclude Include="804.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />
@@ -143,6 +146,7 @@
     <ClInclude Include="BSTSet.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="LinkedListQueue.h" />
+    <ClInclude Include="LinkedListSet.h" />
     <ClInclude Include="LinkedListStack.h" />
     <ClInclude Include="LoopQueue.h" />
     <ClInclude Include="Queue.h" />

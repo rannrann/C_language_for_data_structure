@@ -15,6 +15,7 @@
 #include "BST.h"
 
 #include <time.h>
+#include "804.h"
 int main() {
 	/*ArrayStack
 	ArrayStack *stack = NULL;
@@ -202,7 +203,7 @@ removeElements(head, 6);
 release_listNode(head);*/
 
 
-/*BST*/
+/*BST
 
 BST *bst = create_BST();
 int array[6] = { 5,3,6,8,4,2 };
@@ -216,7 +217,12 @@ printf("----------------------------\n");
 BST_add(bst, 8);
 printf("%d\n", BST_removeMaxNR(bst));
 BST_toString(bst);
-release_BST(bst);
+release_BST(bst);*/
+
+	/*804*/
+	char *input[4] = { "gin", "zen", "gig", "msg" };
+	printf("%d\n", uniqueMorseRepresentations(input, 4));
+
 	return 0;
 
 }

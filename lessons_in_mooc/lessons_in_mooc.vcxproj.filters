@@ -66,6 +66,12 @@
     <ClInclude Include="BSTSet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedListSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="804.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
