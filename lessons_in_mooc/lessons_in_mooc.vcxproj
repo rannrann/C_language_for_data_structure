@@ -145,6 +145,7 @@
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTSet.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="LinkedListMap.h" />
     <ClInclude Include="LinkedListQueue.h" />
     <ClInclude Include="LinkedListSet.h" />
     <ClInclude Include="LinkedListStack.h" />

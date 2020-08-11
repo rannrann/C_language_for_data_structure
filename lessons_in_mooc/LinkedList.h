@@ -9,6 +9,7 @@
 typedef struct B *B;
 typedef struct Node Node;
 typedef struct LinkedList LinkedList;
+
 /*放在LinkedList.h是因为LinkedListQueue也要用，只能破坏隐私性*/
 struct Node {
 	B e;

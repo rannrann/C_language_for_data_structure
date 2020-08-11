@@ -4,40 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-char* find_index_return_mode(char letter) {
-	char * ret;
-	switch (letter) {
-
-	case 'a':ret = (char *)".-"; return ret;
-	case 'b':ret = (char *) "-..."; return ret;
-	case 'c':ret = (char *)  "-.-."; return ret;
-	case 'd':ret = (char *)  "-.."; return ret;
-	case 'e':ret = (char *)  "."; return ret;
-	case 'f':ret = (char *)  "..-."; return ret;
-	case 'g':ret = (char *)  "--."; return ret;
-	case 'h':ret = (char *)  "...."; return ret;
-	case 'i':ret = (char *)  ".."; return ret;
-	case 'j':ret = (char *)  ".---"; return ret;
-	case 'k':ret = (char *)  "-.-"; return ret;
-	case 'l':ret = (char *)  ".-.."; return ret;
-	case 'm':ret = (char *)  "--"; return ret;
-	case 'n':ret = (char *)  "-."; return ret;
-	case 'o':ret = (char *)  "---"; return ret;
-	case 'p':ret = (char *)  ".--."; return ret;
-	case 'q':ret = (char *)  "--.-"; return ret;
-	case 'r':ret = (char *)  ".-."; return ret;
-	case 's':ret = (char *)  "..."; return ret;
-	case 't':ret = (char *)  "-"; return ret;
-	case 'u':ret = (char *)  "..-"; return ret;
-	case 'v':ret = (char *)  "...-"; return ret;
-	case 'w':ret = (char *)  ".--"; return ret;
-	case 'x':ret = (char *)  "-..-"; return ret;
-	case 'y':ret = (char *)  "-.--"; return ret;
-	case 'z':ret = (char *)  "--.."; return ret;
-
-	}
-	return NULL;
-}
+/*
 
 bool eightZeroFour_contains(char **exist_string, int length, char *string) {
 	for (int i = 0; i < length; i++) {
@@ -55,6 +22,7 @@ void eightZeroFour_add(char **exist_string, char *string) {
 }
 
 int uniqueMorseRepresentations(char ** words, int wordsSize) {
+	char *morse_cord[] = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
 	char **D = (char**)malloc(sizeof(char**)*wordsSize);
 	for (int i = 0; i < wordsSize; i++) {
 		D[i] = (char*)malloc(sizeof(char*) * 12 * 4);
@@ -66,7 +34,7 @@ int uniqueMorseRepresentations(char ** words, int wordsSize) {
 		char arr[12 * 4]="\0";
 		for (int j = 0; j < strlen(words[i]); j++)
 		{
-			char *ret = find_index_return_mode(words[i][j]);
+			char *ret = morse_cord[(int)(words[i][j]-'a')];//单引号引起的一个字符代表一个整数，对应的是ASCII码
 			strcat(arr, ret);
 		}
 		if (!eightZeroFour_contains(D, wordsSize, arr)) {
@@ -83,4 +51,22 @@ int uniqueMorseRepresentations(char ** words, int wordsSize) {
 	D = NULL;
 	return counter;
 }
+
+*/
+
+
+/*进阶方法*/
+int uniqueMorseRepresentations(char ** words, int wordsSize)
+{
+	const char *morse[] = { ".-","-...","-.-.","-..",".","..-.","--.","....","..",".---",
+							"-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-",
+							"..-","...-",".--","-..-","-.--","--.." };
+	char rep[100][50] = { { 0 } }, c = 0;
+	for (int i = 0, j = 0; i < wordsSize; j = 0, i++)
+		while (words[i][j] && strcat(rep[i], morse[words[i][j++] - 'a']));
+	for (int i = 0, j = i; i < wordsSize; c += j == wordsSize, j = ++i)
+		while (++j < wordsSize && strcmp(rep[i], rep[j]));
+	return c;
+}
+
 #endif

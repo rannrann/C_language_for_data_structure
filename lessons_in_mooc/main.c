@@ -219,9 +219,11 @@ printf("%d\n", BST_removeMaxNR(bst));
 BST_toString(bst);
 release_BST(bst);*/
 
-	/*804*/
+	/*804
 	char *input[4] = { "gin", "zen", "gig", "msg" };
-	printf("%d\n", uniqueMorseRepresentations(input, 4));
+	printf("%d\n", uniqueMorseRepresentations(input, 4));*/
+	char *a[] = { "abc" };
+	printf("%d", strcmp(a[0], a[1]));
 
 	return 0;
 
