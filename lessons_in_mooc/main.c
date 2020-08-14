@@ -79,17 +79,12 @@ int main() {
 	free(nums);
 	nums = NULL;
 	*/
-	/*189
-	int numsSize=4,*nums = (int*)malloc(numsSize * sizeof(int)),i;
-	nums[0] = -1;
-	nums[1] = -100;
-	nums[2] = 3;
-	nums[3] = 99;
-	rotate(nums, numsSize, 2);
-	for (i = 0; i < numsSize; i++)
+	/*189*/
+	int numsSize = 7, nums[numsSize] = {1,2,3,4,5,6,7};
+	rotate(nums, numsSize, 3);
+	for (int i = 0; i < numsSize; i++)
 		printf("%d,",nums[i]);
-	free(nums);
-	nums = NULL;*/
+
 
 	/*155
 	MinStack *minStack = minStackCreate();
@@ -222,8 +217,7 @@ release_BST(bst);*/
 	/*804
 	char *input[4] = { "gin", "zen", "gig", "msg" };
 	printf("%d\n", uniqueMorseRepresentations(input, 4));*/
-	char *a[] = { "abc" };
-	printf("%d", strcmp(a[0], a[1]));
+
 
 	return 0;
 

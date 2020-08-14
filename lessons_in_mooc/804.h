@@ -1,4 +1,4 @@
-#ifndef _EIGHT_ZERO_FOUR_
+ï»¿#ifndef _EIGHT_ZERO_FOUR_
 #define _EIGHT_ZERO_FOUR_
 #include <string.h>
 #include <stdlib.h>
@@ -34,7 +34,7 @@ int uniqueMorseRepresentations(char ** words, int wordsSize) {
 		char arr[12 * 4]="\0";
 		for (int j = 0; j < strlen(words[i]); j++)
 		{
-			char *ret = morse_cord[(int)(words[i][j]-'a')];//µ¥ÒýºÅÒýÆðµÄÒ»¸ö×Ö·û´ú±íÒ»¸öÕûÊý£¬¶ÔÓ¦µÄÊÇASCIIÂë
+			char *ret = morse_cord[(int)(words[i][j]-'a')];//å•å¼•å·å¼•èµ·çš„ä¸€ä¸ªå­—ç¬¦ä»£è¡¨ä¸€ä¸ªæ•´æ•°ï¼Œå¯¹åº”çš„æ˜¯ASCIIç 
 			strcat(arr, ret);
 		}
 		if (!eightZeroFour_contains(D, wordsSize, arr)) {
@@ -55,7 +55,7 @@ int uniqueMorseRepresentations(char ** words, int wordsSize) {
 */
 
 
-/*½ø½×·½·¨*/
+/*è¿›é˜¶æ–¹æ³•*/
 int uniqueMorseRepresentations(char ** words, int wordsSize)
 {
 	const char *morse[] = { ".-","-...","-.-.","-..",".","..-.","--.","....","..",".---",
@@ -68,5 +68,4 @@ int uniqueMorseRepresentations(char ** words, int wordsSize)
 		while (++j < wordsSize && strcmp(rep[i], rep[j]));
 	return c;
 }
-
 #endif

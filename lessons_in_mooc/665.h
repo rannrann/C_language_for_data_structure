@@ -2,6 +2,7 @@
 #define _OBJ_H_B
 
 #include <stdlib.h>
+/*
 bool checkPossibility(int* nums, int numsSize) {
 	int i, mark = -1, repeat, j, isRepeat = 0;
 	if (numsSize == 1) return true;
@@ -56,6 +57,22 @@ bool checkPossibility(int* nums, int numsSize) {
 		return true;
 
 }
+*/
 
-
+/*½ø½×·½·¨*/
+bool checkPossibility(int* nums, int numsSize) {
+	if (numsSize <= 2) return true;
+	int count = 0;
+	for (int i = 0; i < numsSize - 1; i++) {
+		if (nums[i] > nums[i + 1]) {
+			count++;
+			if (count > 1) return false;
+			if (i > 0) {
+				if (nums[i - 1] <= nums[i + 1]) nums[i] = nums[i - 1];
+				else nums[i + 1] = nums[i];
+			}
+		}
+	}
+	return true;
+}
 #endif

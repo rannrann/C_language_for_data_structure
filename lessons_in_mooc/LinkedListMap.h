@@ -42,6 +42,10 @@ struct llmNode {
 		return llm;
 	}
 
+	void linkedlistmap_toString(llmNode* llm) {
+		printf("")
+	}
+
 	void release_linked_list_map(llmNode *llm) {
 
 	}
