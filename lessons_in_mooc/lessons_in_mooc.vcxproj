@@ -132,6 +132,7 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="1309.h" />
     <ClInclude Include="155.h" />
     <ClInclude Include="189.h" />
     <ClInclude Include="203.h" />
@@ -145,11 +146,11 @@
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTSet.h" />
     <ClInclude Include="LinkedList.h" />
-    <ClInclude Include="LinkedListMap.h" />
     <ClInclude Include="LinkedListQueue.h" />
     <ClInclude Include="LinkedListSet.h" />
     <ClInclude Include="LinkedListStack.h" />
     <ClInclude Include="LoopQueue.h" />
+    <ClInclude Include="MaxHeap.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>

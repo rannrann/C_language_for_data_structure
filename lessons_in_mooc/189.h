@@ -17,7 +17,7 @@ void rotate(int* nums, int numsSize, int k) {
 	}
 }*/
 
-/*进阶方法*/
+/*进阶方法
 void rotate(int* nums, int numsSize, int k) {
 	int arr[numsSize];
 	for (int i = 0; i < numsSize; i++) {
@@ -26,6 +26,6 @@ void rotate(int* nums, int numsSize, int k) {
 	for (int i = 0; i < numsSize; i++) {
 		nums[i] = arr[i];
 	}
-}
+}*/
 
 #endif

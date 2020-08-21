@@ -3,12 +3,8 @@
 #include <stdbool.h>
 #define E Array_E
 typedef struct E *E;
+typedef struct Array Array;
 
-typedef struct Array {
-	int size;
-	E *data;
-	int capacity;
-}Array;
 
 Array* create_array(int capacity);
 
@@ -59,4 +55,6 @@ int removeLast(Array* array);
 void removeElement(Array* array, E e);
 
 void resize(Array* array, E newCapacity);
+
+void array_swap(Array* array, int i, int j);
 #endif

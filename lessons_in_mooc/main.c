@@ -16,6 +16,8 @@
 
 #include <time.h>
 #include "804.h"
+#include "1309.h"
+#include "MaxHeap.h"
 int main() {
 	/*ArrayStack
 	ArrayStack *stack = NULL;
@@ -79,11 +81,11 @@ int main() {
 	free(nums);
 	nums = NULL;
 	*/
-	/*189*/
+	/*189
 	int numsSize = 7, nums[numsSize] = {1,2,3,4,5,6,7};
 	rotate(nums, numsSize, 3);
 	for (int i = 0; i < numsSize; i++)
-		printf("%d,",nums[i]);
+		printf("%d,",nums[i]);*/
 
 
 	/*155
@@ -218,7 +220,24 @@ release_BST(bst);*/
 	char *input[4] = { "gin", "zen", "gig", "msg" };
 	printf("%d\n", uniqueMorseRepresentations(input, 4));*/
 
+	/*1309
+	char *s = "10#11#12";
+	char *re = freqAlphabets(s);
+	printf("%s\n", re);*/
 
+	/*strcat不能放字符
+	char *s = "123";
+	char a[3] = {0};
+	char *b = "b\0";
+	a[0] = s[0] - '0' + 'a';
+	//printf("%c", re);
+	//strcat(a,b);
+	char test[100] = { 0 };
+	test[0] = 'a';//test[0] = "a";test[0]是d
+	printf("test:%s",test);*/
+	
+	
+	
 	return 0;
 
 }

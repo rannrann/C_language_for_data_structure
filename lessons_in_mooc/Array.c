@@ -2,7 +2,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-
+struct Array {
+	int size;
+	E *data;
+	int capacity;
+};
 
 void index_exception() {
 	printf("Add failed. Require index >=0 and index <= size.\n");
@@ -179,4 +183,15 @@ void resize(Array* array, int newCapacity) {
 	array->data = newData;
 	newData = NULL;//我认为可以不free(newData)的原因是，空间已经被array->data指向了，所以只需要让他指向NULL即可
 	array->capacity = newCapacity;
+}
+
+void array_swap(Array* array, int i, int j) {
+	if (i < 0 || i >= array->size || j < 0 || j >= array->size)
+	{
+		atexit(index_exception);
+		exit(EXIT_FAILURE);
+	}
+	E change = array->data[i];
+	array->data[i] = array->data[j];
+	array->data[i] = change;
 }

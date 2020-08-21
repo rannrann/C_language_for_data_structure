@@ -72,7 +72,10 @@
     <ClInclude Include="804.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LinkedListMap.h">
+    <ClInclude Include="1309.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MaxHeap.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
