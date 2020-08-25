@@ -19,6 +19,35 @@
 #include "1309.h"
 #include "MaxHeap.h"
 #include "SortMethod.h"
+#include <windows.h>
+
+double testHeap(Array* testData, int length,bool isHeapify) {
+	LARGE_INTEGER frequency;
+	LARGE_INTEGER start;
+	LARGE_INTEGER end;
+	double interval;
+
+	QueryPerformanceFrequency(&frequency);
+	QueryPerformanceCounter(&start);
+
+	MaxHeap *maxHeap;
+	if (isHeapify)
+		maxHeap = create_maxheap_with_array(retData(testData), length);
+	else {
+		maxHeap = create_maxheap(length);
+		for (int i = 0; i < length; i++)
+			MaxHeap_add(maxHeap, get(testData, i));
+	}
+	release_maxheap(maxHeap);
+
+	QueryPerformanceCounter(&end);
+	interval = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+
+	return interval;
+	
+
+}
+
 int main() {
 	/*ArrayStack
 	ArrayStack *stack = NULL;
@@ -237,6 +266,7 @@ release_BST(bst);*/
 	test[0] = 'a';//test[0] = "a";test[0]ÊÇd
 	printf("test:%s",test);*/
 	
+	/*MaxHeap
 	int arr[10] = {0};
 	for (int i = 0; i < 10; i++)
 	{
@@ -271,7 +301,33 @@ release_BST(bst);*/
 		}
 	}
 	printf("Test MaxHeap completed.");
-	release_maxheap(mh);
-	return 0;
+	release_maxheap(mh);*/
 
+	/*MaxHeap-heapify*/
+	int n = 1000;
+	Array *testData1 = create_array(n);
+	
+	for (int i = 0; i < n; i++)
+	{
+		add(testData1,i,rand() % n + 1);
+		for (int j = 0; j < i; j++)
+		{
+			if (get(testData1,i) == get(testData1,j))
+			{
+				i--;
+			}
+		}
+	}
+	Array *testData2 = create_array_with_array(retData(testData1), n);
+	
+	double time1 = testHeap(testData1,n, false);
+	printf("Without heapify: %f s\n", time1);
+	double time2 = testHeap(testData2,n, true);
+	printf("With heapify: %f s", time2);
+
+	release_array(testData1);
+	release_array(testData2);
+
+
+	return 0;
 }

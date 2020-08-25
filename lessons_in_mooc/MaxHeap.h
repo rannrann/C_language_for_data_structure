@@ -25,6 +25,9 @@ MaxHeap* create_maxheap(int capacity) {
 	mh->data = create_array(capacity);
 	return mh;
 }
+
+
+
 //返回元素个数
 int MaxHeap_getSize(MaxHeap* mh) {
 	return array_getSize(mh->data);
@@ -43,6 +46,8 @@ int MaxHeap_getParentIndex(int index) {
 	}
 	return (index - 1) / 2;
 }
+
+
 
 //返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子节点的索引
 int MaxHeap_getLeftChildIndex(int index) {
@@ -101,6 +106,23 @@ E MaxHeap_extractMax(MaxHeap *mh) {
 	removeLast(mh->data);
 	siftDown(mh, 0);
 	return ret;
+}
+
+E MaxHeap_replace(MaxHeap *mh, E e) {
+	E ret = MaxHeap_findMax(mh);
+	set(mh->data, 0, e);
+	siftDown(mh, 0);
+	return ret;
+}
+
+//heapify:将任意数组整理成二叉堆
+MaxHeap* create_maxheap_with_array(E* arr, int length) {
+	MaxHeap *mh = NULL;
+	mh = (MaxHeap*)malloc(sizeof(MaxHeap));
+	mh->data = create_array_with_array(arr, length);
+	for (int i = MaxHeap_getParentIndex(length - 1); i >= 0; i--)
+		siftDown(mh, i);
+	return mh;
 }
 
 void release_maxheap(MaxHeap* mh) {

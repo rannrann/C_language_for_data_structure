@@ -39,7 +39,7 @@ void arrayStack_toString(ArrayStack* as) {
 	printf("Stack:[");
 	int i;
 	for (i = 0; i < array_getSize(as->array); i++) {
-		printf("%d", as->array->data[i]);
+		printf("%d", get(as->array,i));
 		if (i != array_getSize(as->array) - 1)
 			printf(",");
 	}

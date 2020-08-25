@@ -3,7 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
+struct Array {
+	int size;
+	E *data;
+	int capacity;
+};
 void index_exception() {
 	printf("Add failed. Require index >=0 and index <= size.\n");
 }
@@ -29,6 +33,21 @@ Array* create_array(int capacity) {
 		array->data = (E*)malloc(capacity * sizeof(E));
 		array->capacity = capacity;
 	}
+	return array;
+}
+
+E* retData(Array *array) {
+	return array->data;
+}
+
+Array* create_array_with_array(E* arr,int length) {
+	Array *array = NULL;
+	array = malloc(sizeof(Array));
+	array->data = (E*)malloc(length * sizeof(E));
+	array->capacity = length;
+	array->size = length;
+	for (int i = 0; i < length; i++) 
+		array->data[i] = arr[i];
 	return array;
 }
 
@@ -78,6 +97,11 @@ void add(Array* array, int index, E e) {
 }
 
 
+void array_toString_with_newline(Array* array) {
+	printf("Array: size = %d, capacity = %d\n", array->size, array->capacity);
+	for (int i = 0; i < array->size; i++)
+		printf("%d\n", array->data[i]);
+}
 
 void array_toString(Array* array) {
 	printf("Array: size = %d, capacity = %d\n",array->size,array->capacity);

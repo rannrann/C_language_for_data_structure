@@ -4,15 +4,16 @@
 #define E Array_E
 typedef struct E *E;
 typedef struct Array Array;
-struct Array {
-	int size;
-	E *data;
-	int capacity;
-};
+
 
 Array* create_array(int capacity);
 
+E* retData(Array *array);
+
+Array* create_array_with_array(E* arr, int length);
+
 void release_array(Array* array);
+
 
 //获取数组中的元素个数
 int array_getSize(Array* array);

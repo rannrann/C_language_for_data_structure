@@ -37,7 +37,7 @@ void arrayQueue_toString(ArrayQueue* aq) {
 	printf("Queue:front[");
 	int i;
 	for (i = 0; i < array_getSize(aq->array); i++) {
-		printf("%d", aq->array->data[i]);
+		printf("%d", get(aq->array,i));
 		if (i != array_getSize(aq->array) - 1)
 			printf(",");
 	}
