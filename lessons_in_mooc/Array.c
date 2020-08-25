@@ -2,11 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-struct Array {
-	int size;
-	E *data;
-	int capacity;
-};
+
 
 void index_exception() {
 	printf("Add failed. Require index >=0 and index <= size.\n");
@@ -193,5 +189,5 @@ void array_swap(Array* array, int i, int j) {
 	}
 	E change = array->data[i];
 	array->data[i] = array->data[j];
-	array->data[i] = change;
+	array->data[j] = change;
 }

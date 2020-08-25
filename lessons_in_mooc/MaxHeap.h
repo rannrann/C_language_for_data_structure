@@ -82,13 +82,13 @@ E MaxHeap_findMax(MaxHeap *mh) {
 void siftDown(MaxHeap *mh, int k) {
 	while (MaxHeap_getLeftChildIndex(k) < MaxHeap_getSize(mh)) {
 		int j = MaxHeap_getLeftChildIndex(k);
-		if (j + 1 < MaxHeap_getSize(mh) && get(mh->data, MaxHeap_getRightChildIndex(j + 1)) > get(mh->data,j))
+		if (j + 1 < MaxHeap_getSize(mh) && get(mh->data, j + 1) > get(mh->data,j))
 			j++;
 		//mh->data[j]是leftchild和rightchild中的最大值
 
 		if (get(mh->data, k) >= get(mh->data, j))
 			break;
-		array_swap(k, j);
+		array_swap(mh->data,k, j);
 		k = j;
 	}
 }

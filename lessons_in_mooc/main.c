@@ -18,6 +18,7 @@
 #include "804.h"
 #include "1309.h"
 #include "MaxHeap.h"
+#include "SortMethod.h"
 int main() {
 	/*ArrayStack
 	ArrayStack *stack = NULL;
@@ -236,8 +237,41 @@ release_BST(bst);*/
 	test[0] = 'a';//test[0] = "a";test[0]ÊÇd
 	printf("test:%s",test);*/
 	
-	
-	
+	int arr[10] = {0};
+	for (int i = 0; i < 10; i++)
+	{
+		arr[i] = rand()%100+1;
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+	printf("after sorting \n");
+	bubble_sort(arr, 10);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+	MaxHeap *mh = create_maxheap(10);
+	for (int i = 0; i < 10; i++) {
+		MaxHeap_add(mh, arr[i]);
+	}
+	printf("MaxHeap-size=%d\n", MaxHeap_getSize(mh));
+	printf("adding into Heap finished.\n");
+	int arr2[10] = { 0 };
+	for (int i = 0; i < 10; i++) {
+		arr2[i] = MaxHeap_extractMax(mh);
+		printf("%d\n", arr2[i]);
+	}
+	for (int i = 1; i < 10; i++) {
+		if (arr2[i - 1] < arr2[i])
+		{
+			printf("error");
+			break;
+		}
+	}
+	printf("Test MaxHeap completed.");
+	release_maxheap(mh);
 	return 0;
 
 }

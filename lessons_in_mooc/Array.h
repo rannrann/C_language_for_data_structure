@@ -4,7 +4,11 @@
 #define E Array_E
 typedef struct E *E;
 typedef struct Array Array;
-
+struct Array {
+	int size;
+	E *data;
+	int capacity;
+};
 
 Array* create_array(int capacity);
 
