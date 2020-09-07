@@ -140,6 +140,7 @@
     <ClInclude Include="457.h" />
     <ClInclude Include="665.h" />
     <ClInclude Include="804.h" />
+    <ClInclude Include="973.h" />
     <ClInclude Include="Array.h" />
     <ClInclude Include="ArrayQueue.h" />
     <ClInclude Include="ArrayStack.h" />

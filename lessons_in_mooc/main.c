@@ -20,6 +20,12 @@
 #include "MaxHeap.h"
 #include "SortMethod.h"
 #include <windows.h>
+#include "973.h"
+typedef struct TestMap TestMap;
+struct TestMap {
+	int k;
+	int v;
+};
 
 double testHeap(Array* testData, int length,bool isHeapify) {
 	LARGE_INTEGER frequency;
@@ -46,6 +52,25 @@ double testHeap(Array* testData, int length,bool isHeapify) {
 	return interval;
 	
 
+}
+
+double testSortTime(int *arr, int size,int mode) {
+	LARGE_INTEGER frequency;
+	LARGE_INTEGER start;
+	LARGE_INTEGER end;
+	double interval;
+
+	QueryPerformanceFrequency(&frequency);
+	QueryPerformanceCounter(&start);
+	switch(mode) {
+		case 1:bubble_sort(arr, size); break;
+		case 2:quick_sort(arr, 0, size - 1); break;
+	}
+
+	QueryPerformanceCounter(&end);
+	interval = (double)(end.QuadPart - start.QuadPart) / frequency.QuadPart;
+
+	return interval;
 }
 
 int main() {
@@ -303,7 +328,7 @@ release_BST(bst);*/
 	printf("Test MaxHeap completed.");
 	release_maxheap(mh);*/
 
-	/*MaxHeap-heapify*/
+	/*MaxHeap-heapify
 	int n = 1000;
 	Array *testData1 = create_array(n);
 	
@@ -326,8 +351,58 @@ release_BST(bst);*/
 	printf("With heapify: %f s", time2);
 
 	release_array(testData1);
-	release_array(testData2);
+	release_array(testData2);*/
 
 
+	/*973
+int **ret = malloc(sizeof(int)*2);
+for (int i = 0; i < 1; i++)
+	ret[i] = malloc(sizeof(int) * 2);
+ret[0][0] = 1;
+ret[0][1] = 3;
+ret[1][0] = -2;
+ret[1][1] = 2;
+int *pointsColSize=NULL, *returnSize=NULL,** returnColumnSizes=NULL;
+kClosest(ret, 2, pointsColSize, 1, returnSize, returnColumnSizes);
+for (int i = 0; i < 2; i++)
+	free(ret[i]);
+free(ret);*/
+
+
+/*test quick sort
+	int n = 10;
+	int array[10];
+	
+	for (int i = 0; i < n; i++) {
+		srand(i);
+		array[i] = rand() % 100 + 1;
+	}
+
+	
+	quick_sort(array, 0, n - 1);
+	printf("after sorting \n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\n", array[i]);
+	}
+	*/
+
+/*Bubblesort vs  Quicksort
+int n = 10000;
+int array[10000];
+
+for (int i = 0; i < n; i++) {
+	srand(i);
+	array[i] = rand() % 20000 + 1;
+}
+printf("%f\n", testSortTime(array, n, 1));
+printf("%f\n", testSortTime(array, n, 2));*/
+int *a=malloc(sizeof(int)*2);
+a[0] = 1;
+a[1] = 2;
+swap_element(a[0], a[1]);
+printf("a[0]=%d,a[1]=%d\n", a[0], a[1]);
+free(a);
+a = NULL;
 	return 0;
 }
