@@ -21,6 +21,7 @@
 #include "SortMethod.h"
 #include <windows.h>
 #include "973.h"
+#include "SegmentTree.h"
 typedef struct TestMap TestMap;
 struct TestMap {
 	int k;
@@ -397,12 +398,16 @@ for (int i = 0; i < n; i++) {
 }
 printf("%f\n", testSortTime(array, n, 1));
 printf("%f\n", testSortTime(array, n, 2));*/
-int *a=malloc(sizeof(int)*2);
-a[0] = 1;
-a[1] = 2;
-swap_element(a[0], a[1]);
-printf("a[0]=%d,a[1]=%d\n", a[0], a[1]);
-free(a);
-a = NULL;
+
+
+/*SegmentTree.h*/
+int nums[6] = { -2,0,3,-5,2,-1 };
+SegmentTree *st = create_segmentTree(nums, 6);
+SegmentTree_toString(st);
+
+printf("%d\n", SegmentTree_query(st, 0, 2));
+printf("%d\n", SegmentTree_query(st, 2, 5));
+
+release_SegmentTree(st);
 	return 0;
 }
