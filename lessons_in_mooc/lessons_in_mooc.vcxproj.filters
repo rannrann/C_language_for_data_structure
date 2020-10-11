@@ -87,6 +87,27 @@
     <ClInclude Include="SegmentTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Trie.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="208.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFind1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFind2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFind3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UnionFind4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -114,6 +135,9 @@
       <Filter>头文件</Filter>
     </ClCompile>
     <ClCompile Include="BST.c">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="211.h">
       <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>

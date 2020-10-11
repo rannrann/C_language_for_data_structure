@@ -121,6 +121,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="211.h" />
     <ClCompile Include="Array.c" />
     <ClCompile Include="ArrayQueue.c" />
     <ClCompile Include="ArrayStack.c" />
@@ -136,6 +137,7 @@
     <ClInclude Include="155.h" />
     <ClInclude Include="189.h" />
     <ClInclude Include="203.h" />
+    <ClInclude Include="208.h" />
     <ClInclude Include="448.h" />
     <ClInclude Include="457.h" />
     <ClInclude Include="665.h" />
@@ -147,6 +149,7 @@
     <ClInclude Include="BST.h" />
     <ClInclude Include="BSTSet.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="LinkedListMap.h" />
     <ClInclude Include="LinkedListQueue.h" />
     <ClInclude Include="LinkedListSet.h" />
     <ClInclude Include="LinkedListStack.h" />
@@ -156,6 +159,11 @@
     <ClInclude Include="SegmentTree.h" />
     <ClInclude Include="SortMethod.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Trie.h" />
+    <ClInclude Include="UnionFind1.h" />
+    <ClInclude Include="UnionFind2.h" />
+    <ClInclude Include="UnionFind3.h" />
+    <ClInclude Include="UnionFind4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
