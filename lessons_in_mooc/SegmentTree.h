@@ -28,7 +28,7 @@ void buildSegmentTree(SegmentTree *st,int treeIndex, int l, int r) {
 	int rightTreeIndex = SegmentTree_rightChild(treeIndex);
 
 	int mid = l + (r - l) / 2;//实际上就是(r+l)/2。这样写可以避免超过整型最大值
-
+	printf("treeIndex=%d, l=%d, r=%d,leftTreeIndex=%d, rightTreeIndex=%d, mid=%d\n", treeIndex, l, r, leftTreeIndex, rightTreeIndex, mid);
 	buildSegmentTree(st, leftTreeIndex, l, mid);
 	buildSegmentTree(st,rightTreeIndex, mid + 1, r);
 

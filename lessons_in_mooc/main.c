@@ -24,6 +24,7 @@
 #include "SegmentTree.h"
 #include "208.h"
 #include "211.h"
+#include "1353.h"
 typedef struct TestMap TestMap;
 struct TestMap {
 	int k;
@@ -403,12 +404,12 @@ printf("%f\n", testSortTime(array, n, 2));*/
 
 
 /*SegmentTree.h
-int nums[6] = { -2,0,3,-5,2,-1 };
-SegmentTree *st = create_segmentTree(nums, 6);
+int nums[4] = { 0,1,2,3 };
+SegmentTree *st = create_segmentTree(nums, 4);
 SegmentTree_toString(st);
 
-printf("%d\n", SegmentTree_query(st, 0, 2));
-printf("%d\n", SegmentTree_query(st, 2, 5));
+//printf("%d\n", SegmentTree_query(st, 0, 2));
+//printf("%d\n", SegmentTree_query(st, 2, 5));
 
 release_SegmentTree(st);*/
 
@@ -417,7 +418,7 @@ struct TrieNode *tn = trieCreate();
 	insert(tn, "cat");
 	trieFree(tn);*/
 
-/*211*/
+/*211
 WordDictionary* obj = wordDictionaryCreate();
 wordDictionaryAddWord(obj, "at");
 wordDictionaryAddWord(obj, "and");
@@ -427,7 +428,7 @@ wordDictionaryAddWord(obj, "bat");
 
 printf("%d\n", wordDictionarySearch(obj, "b."));
 printf("%d\n", wordDictionarySearch(obj, "."));
-wordDictionaryFree(obj);
+wordDictionaryFree(obj);*/
 /*
 char *test = malloc(sizeof(char) * 2);
 memset(test, 0, sizeof(char) * 2);
@@ -436,6 +437,34 @@ printf("NULL");
 if (test[0] == '\0')
 printf("\\0");
 free(test);*/
-
+	
+	/*1353*/
+int size = 7;
+	int **tmp = malloc(sizeof(int*) * size);
+	for (int i = 0; i < size; i++)
+		tmp[i] = malloc(sizeof(int) * 2);
+	//tmp[1] = [2, 3];这种方式不行
+	tmp[0][0] = 1;
+	tmp[0][1] = 1;
+	tmp[1][0] = 1;
+	tmp[1][1] = 2;
+	tmp[2][0] = 1;
+	tmp[2][1] = 3;
+	tmp[3][0] = 1;
+	tmp[3][1] = 4;
+	tmp[4][0] = 1;
+	tmp[4][1] = 5;
+	tmp[5][0] = 1;
+	tmp[5][1] = 6;
+	tmp[6][0] = 1;
+	tmp[6][1] = 7;
+	maxEvents(tmp, size, 2);
+	for (int i = 0; i < size; i++)
+	{
+		free(tmp[i]);
+		tmp[i] = NULL;
+	}
+	free(tmp);
+	tmp = NULL;
 	return 0;
 }

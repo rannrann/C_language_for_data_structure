@@ -12,7 +12,7 @@ struct UnionFind3 {
 	int size;
 };
 
-UnionFind3* create_unionfind2(int size) {
+UnionFind3* create_unionfind3(int size) {
 	UnionFind3 *uf = NULL;
 	uf = malloc(sizeof(UnionFind3));
 	uf->size = size;
@@ -70,6 +70,7 @@ void UnionFind3_unionElements(UnionFind3* uf, int p, int q) {
 
 void release_unionfind3(UnionFind3* uf) {
 	free(uf->parent);
+	free(uf->sz);
 	free(uf);
 }
 #endif

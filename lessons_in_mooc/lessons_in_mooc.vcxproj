@@ -134,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="1309.h" />
+    <ClInclude Include="1353.h" />
     <ClInclude Include="155.h" />
     <ClInclude Include="189.h" />
     <ClInclude Include="203.h" />
