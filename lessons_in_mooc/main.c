@@ -439,26 +439,23 @@ printf("\\0");
 free(test);*/
 	
 	/*1353*/
-int size = 7;
+int size = 4;
 	int **tmp = malloc(sizeof(int*) * size);
 	for (int i = 0; i < size; i++)
 		tmp[i] = malloc(sizeof(int) * 2);
 	//tmp[1] = [2, 3];这种方式不行
 	tmp[0][0] = 1;
-	tmp[0][1] = 1;
-	tmp[1][0] = 1;
-	tmp[1][1] = 2;
-	tmp[2][0] = 1;
-	tmp[2][1] = 3;
+	tmp[0][1] = 2;
+	tmp[1][0] = 2;
+	tmp[1][1] = 3;
+	tmp[2][0] = 3;
+	tmp[2][1] = 4;
 	tmp[3][0] = 1;
-	tmp[3][1] = 4;
-	tmp[4][0] = 1;
-	tmp[4][1] = 5;
-	tmp[5][0] = 1;
-	tmp[5][1] = 6;
-	tmp[6][0] = 1;
-	tmp[6][1] = 7;
-	maxEvents(tmp, size, 2);
+	tmp[3][1] = 2;
+
+
+	int ret = maxEvents(tmp, size, 2);
+	printf("ret=%d\n", ret);
 	for (int i = 0; i < size; i++)
 	{
 		free(tmp[i]);
@@ -466,5 +463,40 @@ int size = 7;
 	}
 	free(tmp);
 	tmp = NULL;
+	/*test
+int size = 4;
+int **tmp = malloc(sizeof(int*) * size);
+for (int i = 0; i < size; i++)
+	tmp[i] = malloc(sizeof(int) * 2);
+//tmp[1] = [2, 3];这种方式不行
+tmp[0][0] = 1;
+tmp[0][1] = 2;
+tmp[1][0] = 2;
+tmp[1][1] = 3;
+tmp[2][0] = 3;
+tmp[2][1] = 4;
+tmp[3][0] = 1;
+tmp[3][1] = 2;
+
+int *a = tmp[0];
+int *b = tmp[1];
+
+int tmp1 = *a;
+int tmp2 = *(a + 1);
+*a = *b;
+*(a + 1) = *(b + 1);
+*b = tmp1;
+*(b + 1) = tmp2;
+
+printf("tmp[0]=[%d,%d],tmp[1]=[%d,%d]\n", tmp[0][0], tmp[0][1], tmp[1][0], tmp[1][1]);
+
+for (int i = 0; i < size; i++)
+{
+	free(tmp[i]);
+	tmp[i] = NULL;
+}
+free(tmp);
+tmp = NULL;*/
+
 	return 0;
 }
